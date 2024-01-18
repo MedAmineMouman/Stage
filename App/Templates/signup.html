@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <title>Sign UP</title>
+    <link rel="stylesheet" href="style.css">
+    <script language="javascript">
+          function verif() {
+            var username = document.f.username.value;
+            var email = document.f.email.value;
+            var password1 = document.f.password2.value;
+            var confirmPassword = document.f.rpa.value;
+        if (username === "") {
+          alert("Veuillez remplir votre nom d'utilisateur");
+          return false;
+        } else if (email === "") {
+          alert("Veuillez remplir votre email.");
+          return false;
+        } else if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+          alert("Veuillez saisir une adresse email valide.");
+          return false;
+        } else if (password1 !== confirmPassword) {
+          alert("Les mots de passe ne correspondent pas.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="logo-container">
+        <img src="wallet-background.jpg" alt="Logo">
+      </div>
+      <h1>Create Your Account</h1>
+      <form method="POST" name="f">
+        <div class="txt_field">
+          <input type="text"  id="n1" name="username" required>
+          <label>Username</label>
+        </div>
+		   <div class="txt_field">
+          <input type="text"   id="email" name="email" required>
+          <label>Email</label>
+        </div>
+        <div class="txt_field">
+          <input type="password"   id="password" name="password2" required>
+          <label>Password</label>
+        </div>
+        <div class="txt_field">
+          <input type="password"   id="password" name="rpa" required>
+          <label>Retaper Password</label>
+        </div>
+        <input type="submit" value="Sign Up" onclick="return verif()">
+        <div class="link">
+          You have an account ? <a href="login.html" class="lien">Login here</a>
+        </div>
+      </form> 
+    </div> 
+  </body>
+</html>

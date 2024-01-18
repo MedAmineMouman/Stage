@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script language="javascript">
+      function verif() {
+        var username = document.getElementsByName("us1")[0].value;
+        var password = document.getElementsByName("pa1")[0].value;
+        if (username != "amine") {
+          alert("Verifier votre nom utilisateur");
+          return false;
+        }
+        if (password != "amine") {
+          alert("Verifier votre mot de passe");
+          return false;	
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="logo-container">
+        <img src="wallet-background.jpg" alt="Logo">
+      </div>
+      <h1>Wallet Login</h1>
+      <form method="post">
+        <div class="txt_field">
+          <input type="text" name="us1" required>
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt_field">
+          <input type="password" name="pa1" required>
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <input type="submit" value="Login" onclick="return verif()">
+        <div class="link">
+          Not a member? <a href="signup.html" class="lien">Signup</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
